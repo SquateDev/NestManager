@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="AllFilesAccessPolicy,ScopedStorage" />
+
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="PackageVisibilityPolicy,QueryAllPackagesPermission" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"
+        tools:ignore="RequestInstallPackagesPolicy" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"
+        tools:ignore="PhotoAndVideoPolicy,SelectedPhotoAccess" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO"
+        tools:ignore="PhotoAndVideoPolicy,SelectedPhotoAccess" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"
+        tools:ignore="ForegroundServicesPolicy" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Base.Theme.NestManager"
+        android:requestLegacyExternalStorage="true"
+        android:preserveLegacyExternalStorage="true"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Base.Theme.NestManager">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".Activity.Activty" />
+        <activity android:name=".Activity.HexEditor" />
+        <activity android:name=".Activity.FileViewerActivity"
+            android:exported="true"
+            tools:ignore="MissingClass">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+                <data android:scheme="file" />
+                <data android:scheme="content" />
+                <data android:host="*" />
+            </intent-filter>
+
+            <!-- .txt файл -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="file"
+                    tools:ignore="AppLinkUrlError" />
+                <data android:scheme="content" />
+                <data android:mimeType="text/plain" />
+                <data android:pathPattern=".*\\.txt" />
+                <data android:pathPattern=".*\\.txt" />
+            </intent-filter>
+
+            <!-- .so файл -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="file"
+                    tools:ignore="AppLinkUrlError" />
+                <data android:scheme="content" />
+                <data android:mimeType="application/octet-stream" />
+                <data android:pathPattern=".*\\.so" />
+                <data android:pathPattern=".*\\.so" />
+            </intent-filter>
+
+            <!-- .java файл -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data
+                    android:host="TODO"
+                    android:scheme="file"
+                    tools:ignore="AppLinkUrlError,IntentFilterUniqueDataAttributes" />
+                <data android:scheme="content" />
+                <data android:mimeType="text/x-java" />
+                <data android:pathPattern=".*\\.java" />
+                <data android:pathPattern=".*\\.java" />
+            </intent-filter>
+
+            <!-- .js файл -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="file"
+                    tools:ignore="AppLinkUrlError" />
+                <data android:scheme="content" />
+                <data android:mimeType="application/javascript" />
+                <data android:pathPattern=".*\\.js" />
+                <data android:pathPattern=".*\\.js" />
+            </intent-filter>
+
+            <!-- .html файл -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="file"
+                    tools:ignore="AppLinkUrlError" />
+                <data android:scheme="content" />
+                <data android:mimeType="text/html" />
+                <data android:pathPattern=".*\\.html" />
+                <data android:pathPattern=".*\\.html" />
+            </intent-filter>
+
+            <!-- Kotlin Файл -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="file"
+                    tools:ignore="AppLinkUrlError" />
+                <data android:scheme="content" />
+                <data android:mimeType="text/x-kotlin" />
+                <data android:pathPattern=".*\\.kt" />
+                <data android:pathPattern=".*\\.kts" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>

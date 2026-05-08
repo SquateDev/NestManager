@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/corner_layout1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:background="@drawable/item_drawable"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:id="@+id/image_linear"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/radius_text"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/file_icon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/kotlin" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/file_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Название Файла"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/image_linear"
+        app:layout_constraintTop_toTopOf="@+id/image_linear" />
+
+    <TextView
+        android:id="@+id/data_edit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="вчера"
+        android:textColor="#9B9B9B"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/image_linear"
+        app:layout_constraintTop_toBottomOf="@+id/file_name" />
+
+    <TextView
+        android:id="@+id/file_sign_id"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="2dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Подпись: KEY"
+        android:textColor="#6B6B6B"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/image_linear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/image_linear"
+        app:layout_constraintTop_toBottomOf="@+id/data_edit" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
